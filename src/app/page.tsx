@@ -14,7 +14,7 @@ export default function Home() {
                     <h2 className="text-5xl font-bold mb-4">HELLO!</h2>
                     <p className="text-2xl font-semibold">You&#39;ve entered Vang&#39;s forest.</p>
                     <p className="text-2xl font-semibold">Ask me a question, and I&#39;ll draw cards</p>
-                    <p className="text-2xl font-semibold">to uncover your answer.ç</p>
+                    <p className="text-2xl font-semibold">to uncover your answer.</p>
                 </div>
 
                 <div className="flex flex-row-reverse">
