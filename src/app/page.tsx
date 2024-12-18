@@ -22,12 +22,12 @@ export default function Home() {
                            alt={'vanga'}
                            width={783}
                            height={906}
-                           className="float-right mr-10 block"/>
+                           className="mr-10 block"/>
                     <Image src={fireStone}
                            alt={'fireStone'}
-                           width={783}
-                           height={846}
-                           className="absolute mr-80 mt-40"/>
+                           width={660}
+                           height={660}
+                           className="absolute place-items-center mt-60 mr-80"/>
 
                 </div>
             </div>
