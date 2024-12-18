@@ -19,7 +19,11 @@ export default function Home() {
                 <p className="text-2xl font-semibold">to uncover your answer.ç</p>
             </div>
 
-            <Image src={'./vanga.svg'} alt={'vanga'} width={783} height={846} className=""/>
+            <Image src={'./vanga.svg'}
+                   alt={'vanga'}
+                   width={783}
+                   height={846}
+                   className="float-right mr-10"/>
         </div>
 
     );
