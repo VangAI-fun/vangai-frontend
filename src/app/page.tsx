@@ -1,5 +1,6 @@
 import Header from "@/component/Header";
 import {Pixelify_Sans} from "@next/font/google";
+import Image from "next/image";
 
 const pixelifySans = Pixelify_Sans({
     variable: "--font-pixelify-sans",
@@ -18,6 +19,7 @@ export default function Home() {
                 <p className="text-2xl font-semibold">to uncover your answer.ç</p>
             </div>
 
+            <Image src={'./vanga.svg'} alt={'vanga'} width={783} height={846} className=""/>
         </div>
 
     );
