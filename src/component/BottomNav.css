@@ -1,0 +1,9 @@
+.bottomNav {
+    margin-top: 10px;
+    background-color: black;
+    border-color: #0a0a0a;
+    font-family: PixelifySans;
+    font-size: xxx-large;
+    z-index: 10; /* Этот слой будет поверх фона */
+    position: relative; /* Устанавливает контекст для z-index */
+}

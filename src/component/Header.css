@@ -6,6 +6,9 @@
     border-radius: 12px; /* Rounded corners */
     background-color: #3F45524D; /* Optional: Add a background color */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a better look */
+    z-index: 10;
+    color: white;
+    position: relative;
 }
 
 .header-content {
