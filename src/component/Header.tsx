@@ -11,6 +11,7 @@ export default function Header() {
                 <WalletMultiButton style={{
                     backgroundColor: "#3F45524D",
                     border: "2px",
+                    fontFamily : "PixelifySans"
                 }} />
             </div>
         </div>

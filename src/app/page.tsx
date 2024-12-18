@@ -1,16 +1,10 @@
 import Header from "@/component/Header";
-import {Pixelify_Sans} from "@next/font/google";
 import Image from "next/image";
-
-const pixelifySans = Pixelify_Sans({
-    variable: "--font-pixelify-sans",
-    subsets: ["latin"],
-});
 
 
 export default function Home() {
     return (
-        <div className={`${pixelifySans.className}`}>
+        <div>
         <Header/>
             <div className="mt-24 flex flex-col justify-center items-center">
                 <h2 className="text-5xl font-bold mb-4">HELLO!</h2>
