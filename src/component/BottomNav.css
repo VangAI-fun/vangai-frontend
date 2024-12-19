@@ -1,9 +1,42 @@
 .bottomNav {
+    margin-left: 30px;
+    margin-bottom: 20px;
     margin-top: 10px;
-    background-color: black;
-    border-color: #0a0a0a;
+    width: 100vw;
+    display: flex;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
     font-family: PixelifySans;
     font-size: xxx-large;
     z-index: 10; /* Этот слой будет поверх фона */
     position: relative; /* Устанавливает контекст для z-index */
+}
+
+.btm-rght {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 49vw;
+    border: 2px solid #3F45524D; /* Add a border */
+    border-radius: 12px; /* Rounded corners */
+    background-color: #3F45524D; /* Optional: Add a background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a better look */
+}
+
+.txt {
+    margin-left: 20px;
+}
+
+.find {
+    margin-left: 20px;
+    font-size: large;
+    margin-top: 8vw;
+    color: #6E6E6E;
+}
+
+.link {
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 1vw;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
 }

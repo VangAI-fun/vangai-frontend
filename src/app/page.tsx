@@ -1,7 +1,8 @@
 import Header from "@/component/Header";
 import Image from "next/image";
-import BottomNav from "@/component/BottomNav";
 import fireStone from '../../public/fireStone.png'
+import React from "react";
+import BottomNav from "@/component/BottomNav";
 
 
 
@@ -32,7 +33,7 @@ export default function Home() {
                 </div>
             </div>
 
-            {/*<BottomNav/>*/}
+            <BottomNav/>
         </div>
 
     );
