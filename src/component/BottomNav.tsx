@@ -11,7 +11,7 @@ export default function BottomNav() {
                        width={0}
                        height={0}
                        sizes="100vw"
-                       style={{ width: '45vw', height: '400px', background: 'rgba(0, 0, 0, 0.5)', marginBottom: '20px'}}
+                       style={{ width: '45vw', height: '500px', background: 'rgba(0, 0, 0, 0.5)', marginBottom: '20px'}}
                        className="ml-10"/>
                 <div className="btm-rght mr-10 bg-[#0a0a0a]">
                     <h2 className="txt">LET'S KEEP IN</h2>
