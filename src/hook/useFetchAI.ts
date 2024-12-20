@@ -23,12 +23,14 @@ export async function useFetchAI() {
     const url = 'https://dev-api.promptcatalog.online/api/message';
     const options: RequestInit = {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'X-Api-Token': api,
             'Content-Type': 'application/json',
-            Accept: 'application/json, application/problem+json'
+            Accept: '*/*'
         },
-        body: '{"agent":{"id":"crypto_tarot","type":"text"},"message":{"parts":["content":"Told me about my girlfriend?","role":"user"}]},"model":{"config":{"top_p":0.5},"model_name":"gpt-3.5-turbo","provider":"gpt","system_prompt":"You are a helpful assistant."}}'
+
+        body: '{"agent": {"id":"crypto_tarot","type": "text"},"message": {"parts": [{"content": "What bitcoin price will be tomorrow","role": "user"}]  }}'
     };
 
     useEffect(() => {
