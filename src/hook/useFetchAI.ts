@@ -1,45 +1,49 @@
-"use client"
-import {useEffect} from "react";
+"use client";
+import { useEffect } from "react";
 
-
-
-// {
-//     "agent": {
-//     "id": "crypto_tarot",
-//         "type": "text"
-// },
-//     "message": {
-//     "parts": [
-//         {
-//             "content": "What bitcoin price will be tomorrow",
-//             "role": "user"
-//         }
-//     ]
-// }
-// }
 export async function useFetchAI() {
+    const api: string = process.env.REACT_APP_X_API_TOKEN || "";
+    const url = "https://dev-api.promptcatalog.online/api/message";
 
-    const api: string = process.env["REACT_APP_X_API_TOKEN"] || "";
-    const url = 'https://dev-api.promptcatalog.online/api/message';
     const options: RequestInit = {
-        method: 'POST',
+        method: "POST",
         mode: 'no-cors',
         headers: {
-            'X-Api-Token': api,
-            'Content-Type': 'application/json',
-            Accept: '*/*'
+            "X-Api-Token": api,
+            "Content-Type": "application/json",
+            Accept: "application/json",
         },
-
-        body: '{"agent": {"id":"crypto_tarot","type": "text"},"message": {"parts": [{"content": "What bitcoin price will be tomorrow","role": "user"}]  }}'
+        body: JSON.stringify({
+            agent: {
+                id: "crypto_tarot",
+                type: "text",
+            },
+            message: {
+                parts: [
+                    {
+                        content: "What bitcoin price will be tomorrow",
+                        role: "user",
+                    },
+                ],
+            },
+        }),
     };
 
     useEffect(() => {
-        try {
-            const response = fetch(url, options);
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) {
+                    console.error(`Error: ${response.status} ${response.statusText}`);
+                } else {
+                    const data = await response.json();
+                    console.log(data);
+                }
+            } catch (error) {
+                console.error("Fetch error:", error);
+            }
+        };
 
-            response.then(data => {console.log(data)});
-        } catch (error) {
-            console.error(error);
-        }
-     }, [])
+        fetchData();
+    }, []);
 }
