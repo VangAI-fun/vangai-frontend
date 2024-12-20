@@ -1,13 +1,15 @@
+"use client"
 import Header from "@/component/Header";
 import Image from "next/image";
 import fireStone from '../../public/fireStone.png'
 import form from '../../public/form.png'
 import React from "react";
 import BottomNav from "@/component/BottomNav";
-
-
+import {useFetchAI} from "@/hook/useFetchAI";
 
 export default function Home() {
+    console.log("AAA")
+    useFetchAI().then();
     return (
         <div>
             <div className="vanga">
