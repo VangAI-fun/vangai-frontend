@@ -9,7 +9,7 @@ interface DataRequest {
     message_id: string;
 }
 
-const API_BASE_URL = 'http://localhost:8080'; // Replace with your actual server URL
+const API_BASE_URL = 'http://localhost:8080';
 
 export function useFetchAI(content: string) {
 
