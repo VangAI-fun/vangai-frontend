@@ -2,7 +2,6 @@
 import Header from "@/component/Header";
 import Image from "next/image";
 import fireStone from '../../public/fireStone.png'
-import form from '../../public/form.png'
 import React, {useEffect, useState} from "react";
 import BottomNav from "@/component/BottomNav";
 import {useFetchAI} from "@/hook/useFetchAI";
@@ -63,17 +62,22 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-row-reverse">
+                    {data && <>
+                        <span className="absolute left-10 top-96 ml-64 text-white pr-24 pt-2 pb-2 z-30"
+                              style={{top: 'calc(24rem + 225px)'}}>{data}</span>
+                    </>}
                     <input
                             type="text"
                             value={input}
+                            placeholder="Write all you questions for me"
                             onChange={(e) => setInput(e.target.value)}
-                            className="absolute left-10 top-96 bg-purple-700 ml-64 text-white pr-24 pt-2 pb-2 z-30"
-                           style={{top: 'calc(24rem + 275px)'}}
+                            className="absolute left-10 top-96 bg-purple-700 ml-64 text-white pt-2 pb-2 z-30"
+                           style={{top: 'calc(24rem + 275px)', width: '300px'}}
 
                     />
                     <button
                         className="absolute left-10 top-96 bg-purple-700 ml-64 text-white pl-24 pr-24 pt-2 pb-2 z-30"
-                        style={{top: 'calc(24rem + 325px)'}}
+                        style={{top: 'calc(24rem + 325px)', width: '300px'}}
                         onClick={handleGift}
                     >
                         ASK 0.005 SOL
