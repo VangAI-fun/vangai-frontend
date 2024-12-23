@@ -10,8 +10,8 @@ import {useWallet} from "@solana/wallet-adapter-react";
 import {Connection, LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction} from "@solana/web3.js";
 
 export default function Home() {
-    const content = "what do I need do with relationship with AI Agent?"
-    const {data} = useFetchAI(content);
+    const [input, setInput] = useState<string>('')
+    const {data} = useFetchAI(input);
 
     const {publicKey, connected, sendTransaction} = useWallet();
     const [transactionStatus, setTransactionStatus] = useState<string>('');
@@ -63,8 +63,14 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-row-reverse">
-                    <Image src={form} alt={'form'} width={0} height={0}
-                           className="absolute top-96 z-20 left-10 h-[450px] w-[800px]"/>
+                    <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            className="absolute left-10 top-96 bg-purple-700 ml-64 text-white pr-24 pt-2 pb-2 z-30"
+                           style={{top: 'calc(24rem + 275px)'}}
+
+                    />
                     <button
                         className="absolute left-10 top-96 bg-purple-700 ml-64 text-white pl-24 pr-24 pt-2 pb-2 z-30"
                         style={{top: 'calc(24rem + 325px)'}}
