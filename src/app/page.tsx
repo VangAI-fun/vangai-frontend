@@ -13,9 +13,9 @@ export default function Home() {
     const {data} = useFetchAI(input);
 
     const {publicKey, connected, sendTransaction} = useWallet();
-    const [transactionStatus, setTransactionStatus] = useState<string>('');
     const recipient = 'D9Pn2KWJoheQ78K5tXZZ1TgQHTWYkEizdUkp4kDAQmN9';
     const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
+    const number = 0.005;
 
 
     useEffect(() => {
@@ -30,7 +30,6 @@ export default function Home() {
             alert("Please connect your wallet.");
             return;
         }
-        const number = 0.005;
 
         if (isNaN(number)) {
             alert("The input cannot be converted to a number.");

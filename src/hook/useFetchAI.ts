@@ -26,14 +26,14 @@ export function useFetchAI(content: string) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(request),
-                mode: 'no-cors', // Add no-cors mode
+                mode: 'no-cors',
             });
 
             if (!response.ok) {
                 throw new Error('Failed to fetch result');
             }
             console.log(response)
-            return response.text(); // This is for an opaque response
+            return response.text();
         };
 
         const fetchData = async (request: DataRequest): Promise<string> => {
@@ -44,13 +44,13 @@ export function useFetchAI(content: string) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(request),
-                mode: 'no-cors', // Add no-cors mode
+                mode: 'no-cors',
             });
 
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }
-            return response.text(); // This is for an opaque response
+            return response.text();
         };
 
         const fetchSequence = async () => {
@@ -59,16 +59,13 @@ export function useFetchAI(content: string) {
             setError("");
 
             try {
-                // Step 1: Call fetchResult to get messageId
                 console.log(content);
                 const messageId = await fetchResult({ content });
                 console.log('Message ID:', messageId);
 
-                // Step 2: Use the messageId to call fetchData
                 const fetchDataResponse = await fetchData({ message_id: messageId });
                 console.log('Fetch Data Response:', fetchDataResponse);
 
-                // Update state with the final data
                 setData(fetchDataResponse);
             } catch (err: any) {
                 setError(err.message || 'An error occurred');
@@ -77,7 +74,6 @@ export function useFetchAI(content: string) {
             }
         };
 
-        // Only call fetchSequence if content is non-empty
         if (content.trim() !== "") {
             fetchSequence().then(r => r);
         } else {
