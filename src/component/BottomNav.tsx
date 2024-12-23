@@ -19,9 +19,9 @@ export default function BottomNav() {
 
                     <p className="find">Find us here:</p>
                     <div className="link">
-                        <span><a><u>GitHub</u></a></span>
+                        <span><a href="https://github.com/VangAI-fun" target="_blank"><u>GitHub</u></a></span>
                         <span><a href="https://x.com/VangAI_" target="_blank"><u>Twitter</u></a></span>
-                        <span><a><u>Telegram</u></a></span>
+                        <span><a href="https://x.com/VangAI_" target="_blank"><u>Telegram</u></a></span>
                     </div>
                 </div>
             </div>
