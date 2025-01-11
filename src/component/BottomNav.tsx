@@ -5,23 +5,27 @@ import './BottomNav.css'
 export default function BottomNav() {
     return (
         <div className="bottomNav">
-            <div className="flex">
-                <Image src={bottom}
-                       alt={'bottom'}
-                       width={0}
-                       height={0}
-                       sizes="100vw"
-                       style={{ width: '45vw', height: '500px', background: 'rgba(0, 0, 0, 0.5)', marginBottom: '20px'}}
-                       className="ml-10"/>
-                <div className="btm-rght mr-10 bg-[#0a0a0a]">
-                    <h2 className="txt">LET'S KEEP IN</h2>
-                    <h2 className="txt">TOUCH!</h2>
+            <div className="wrapper">
+                <div className="bottomNav__logo">
+                    <Image src={bottom}
+                        alt={'bottom'}
+                        width={655}
+                        height={345}
+                        className="bottomNav__image"/>
+                    <div className="nav-logo">
+                        <span className="nav-logo__decor">■</span>
+                        <span className="nav-logo__text"> AI Vanga</span>
+                    </div>
+                </div>
+                <div className="bottomNav__info">
+                    <h2 className="bottomNav__title">LET'S KEEP IN</h2>
+                    <h2 className="bottomNav__title last">TOUCH!</h2>
 
-                    <p className="find">Find us here:</p>
-                    <div className="link">
-                        <span><a href="https://github.com/VangAI-fun" target="_blank"><u>GitHub</u></a></span>
-                        <span><a href="https://x.com/VangAI_" target="_blank"><u>Twitter</u></a></span>
-                        <span><a href="https://x.com/VangAI_" target="_blank"><u>Telegram</u></a></span>
+                    <p className="bottomNav__text">Find us here:</p>
+                    <div className="bottomNav__links">
+                        <a className="bottomNav__link" href="https://github.com/VangAI-fun" target="_blank">GitHub</a>
+                        <a className="bottomNav__link" href="https://x.com/VangAI_" target="_blank">Twitter</a>
+                        <a className="bottomNav__link" href="https://x.com/VangAI_" target="_blank">Telegram</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,44 @@
+.nav-container {
+    position: relative;
+
+    margin-top: 24px;
+
+    padding: 14px 24px;
+    border-radius: 6px;
+
+    background: #3f455231;
+    backdrop-filter: blur(54px);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-container button {
+    background: transparent;
+    border: 1px solid #fff;
+
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.nav-logo__decor {
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.nav-logo__text{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+}

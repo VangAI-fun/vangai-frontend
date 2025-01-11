@@ -1,0 +1,142 @@
+.vanga-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 920px;
+}
+
+.vanga-block::before {
+    position: absolute;
+    content: '';
+    bottom: -30%;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    /* background: url('/vanga-block-linear.png') top no-repeat; */
+    /* background-size: cover; */
+    background: linear-gradient(180deg, rgba(10, 11, 28, 0) 0%, #000000 100%);
+    z-index: 3;
+}
+
+.vanga-image {
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    z-index: 1;
+    
+
+    animation-name: fly;
+    animation-duration: 9000ms;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    will-change: transform;
+}
+
+.vanga-boiler {
+    position: absolute;
+    bottom: -50%;
+    right: 25%;
+    z-index: 2;
+
+    animation-name: fly-1;
+    animation-duration: 7000ms;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    will-change: transform;
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, -5px); }
+    50% { transform: translate(5px, 5px); }
+    75% { transform: translate(-15px, -15px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes fly-1 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    75% { transform: translate(5px, 5px); }
+    100% { transform: translate(0, 0); }
+}
+
+@media screen and (min-width: 1650px) {
+    .vanga-image {
+        right: 10%;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .vanga-image {
+        right: 15%;
+    }
+}
+
+@media screen and (min-width: 2200px) {
+    .vanga-image {
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .vanga-image {
+        max-width: 700px;
+        right: 4%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .vanga-image {
+        max-width: 500px;
+    }
+
+    .vanga-boiler {
+        bottom: -44%;
+        right: 7%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .vanga-image {
+        top: 9%;
+    }
+
+    .vanga-boiler {
+        bottom: -8%;
+        right: 10%;
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .vanga-block::before {
+        bottom: 7%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .vanga-image {
+        max-width: 350px;
+        top: 15%;
+    }
+
+    .vanga-boiler {
+        max-width: 490px;
+        max-height: 490px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .vanga-image {
+        max-width: 330px;
+    }
+
+    .vanga-boiler {
+        max-width: 450px;
+        max-height: 450px;
+    }
+}

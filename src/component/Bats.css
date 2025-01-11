@@ -1,0 +1,90 @@
+.bat-wrapper {
+    position: absolute;
+
+    animation-name: flyInW;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.bat-wrapper.bat-wrapper-1 {
+    top: 15%;
+    left: 15%;
+    animation-duration: 5000ms;
+}
+
+.bat-wrapper.bat-wrapper-2 {
+    top: 15%;
+    right: 23%;
+    animation-duration: 6000ms;
+}
+
+.bat-wrapper.bat-wrapper-3 {
+    top: 45%;
+    left: 15%;
+    animation-duration: 4000ms;
+}
+
+
+
+
+.bat {
+    animation-name: jitter;
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flyInW {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(50px, -30px) rotate(20deg); }
+    50% { transform: translate(75px, 0) rotate(-20deg); }
+    75% { transform: translate(100px, -30px) rotate(20deg); }
+    100% { transform: translate(150px, 0) rotate(-20deg); }
+}
+
+@keyframes jitter {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, 1px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-1px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .bat-wrapper.bat-wrapper-2 {
+        right: 30%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .bat-wrapper.bat-wrapper-2 {
+        right: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bat-wrapper.bat-wrapper-1 {
+        left: 0%;
+        top: 20%;
+    }
+    .bat-wrapper.bat-wrapper-2 {
+        top: 10%;
+    }
+
+    .bat-wrapper.bat-wrapper-3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    @keyframes flyInW {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(50px, -30px) rotate(20deg); }
+        50% { transform: translate(60px, 0) rotate(-20deg); }
+        75% { transform: translate(70px, -30px) rotate(20deg); }
+        100% { transform: translate(80px, 0) rotate(-20deg); }
+    }
+}
