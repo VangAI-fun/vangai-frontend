@@ -1,9 +1,11 @@
 "use client"
+import Nav from "@/component/Nav";
 import Header from "@/component/Header";
-import Image from "next/image";
-import fireStone from '../../public/fireStone.png'
-import React, {useEffect, useState} from "react";
+import VangaImage from "@/component/VangaImage";
+import Bats from "@/component/Bats";
 import BottomNav from "@/component/BottomNav";
+
+import React, {useEffect, useState} from "react";
 import {useFetchAI} from "@/hook/useFetchAI";
 import {useWallet} from "@solana/wallet-adapter-react";
 import {Connection, LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction} from "@solana/web3.js";
@@ -50,20 +52,18 @@ export default function Home() {
     }
 
     return (
-        <div>
-            <div className="vanga">
-                <Header/>
-                <div className="mt-24 flex flex-col justify-center items-center relative z-10">
-                    <h2 className="text-5xl font-bold mb-4">HELLO!</h2>
-                    <p className="text-2xl font-semibold">You&#39;ve entered Vang&#39;s forest.</p>
-                    <p className="text-2xl font-semibold">Ask me a question, and I&#39;ll draw cards</p>
-                    <p className="text-2xl font-semibold">to uncover your answer.</p>
-                </div>
+        <div className="page">
+            <VangaImage/>
+            <Bats/>
 
-                <div className="flex flex-row-reverse">
+            <div className="wrapper">
+                <Nav/>
+                <Header/>
+
+                <div className="form">
                     {data && <>
                         <span className="absolute left-10 top-96 ml-64 text-white pr-24 pt-2 pb-2 z-30"
-                              style={{top: 'calc(24rem + 225px)'}}>{data}</span>
+                                style={{top: 'calc(24rem + 225px)'}}>{data}</span>
                     </>}
                     <input
                             type="text"
@@ -71,7 +71,7 @@ export default function Home() {
                             placeholder="Write all you questions for me"
                             onChange={(e) => setInput(e.target.value)}
                             className="absolute left-10 top-96 bg-purple-700 ml-64 text-white pt-2 pb-2 z-30"
-                           style={{top: 'calc(24rem + 275px)', width: '300px'}}
+                            style={{top: 'calc(24rem + 275px)', width: '300px'}}
 
                     />
                     <button
@@ -81,23 +81,10 @@ export default function Home() {
                     >
                         ASK 0.005 SOL
                     </button>
-
-                    <Image src={'./vanga.svg'}
-                           alt={'vanga'}
-                           width={783}
-                           height={906}
-                           className="mr-10 block"/>
-                    <Image src={fireStone}
-                           alt={'fireStone'}
-                           width={660}
-                           height={660}
-                           className="absolute place-items-center mt-60 mr-80"/>
-
                 </div>
             </div>
 
             <BottomNav/>
         </div>
-
     );
 }
